@@ -129,7 +129,8 @@ class UserRepository extends BaseRepository
             }
 
 
-        } else if ($request['role'] == env('TRANSLATOR_ROLE_ID')) {
+        }
+        else if ($request['role'] == env('TRANSLATOR_ROLE_ID')) {
 
             $user_meta = UserMeta::firstOrCreate(['user_id' => $model->id]);
 
@@ -203,7 +204,8 @@ class UserRepository extends BaseRepository
             if ($model->status != '1') {
                 $this->enable($model->id);
             }
-        } else {
+        }
+        else {
             if ($model->status != '0') {
                 $this->disable($model->id);
             }
